@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Adivinacion {
 
     public static void main(String[] args) {
-        int random, num, cont = 1, cont2 = 1;
-        double media = 0;
+        int random, num, cont = 1, cont2 = 1, partida = 1;
+        int media = 0;
         String consulta = null;
         boolean continuar = true;
         Scanner sc;
@@ -18,9 +18,10 @@ public class Adivinacion {
             num = sc.nextInt();
             sc.nextLine();
 
-            if (random == num)
+            if (random == num) {
                 System.out.printf("Has adivinado el numero!\n");
-            else
+                partida++;
+            } else
                 cont++;
 
         } while (num != random);
@@ -61,11 +62,16 @@ public class Adivinacion {
 
             if (consulta.toLowerCase().equals("s")) {
                 continuar = true;
+                partida++;
             } else {
                 continuar = false;
             }
 
         }
+        System.out.printf("Has jugado %d veces\n", partida);
+        media = (cont + cont2) / partida;
+        System.out.printf("La media de intentos es: %d\n", media);
         System.out.println("Hasta pronto");
+
     }
 }
