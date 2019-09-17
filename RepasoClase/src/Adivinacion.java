@@ -19,7 +19,7 @@ public class Adivinacion {
             sc.nextLine();
 
             if (random == num) {
-                System.out.printf("Has adivinado el numero!\n");
+                System.out.printf("Has adivinado el numero!!\n");
                 partida++;
             } else
                 cont++;
