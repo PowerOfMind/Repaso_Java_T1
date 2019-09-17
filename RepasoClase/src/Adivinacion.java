@@ -4,8 +4,8 @@ public class Adivinacion {
 
     public static void main(String[] args) {
         int random, num, cont = 1, cont2 = 1, partida = 1;
-        int media = 0;
-        String consulta = null;
+        int media;
+        String consulta;
         boolean continuar = true;
         Scanner sc;
         sc = new Scanner(System.in);
