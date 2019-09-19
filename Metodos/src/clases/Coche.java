@@ -1,31 +1,26 @@
 package clases;
 
 public class Coche {
-    /*
+
 
     // VARIABLES
 
 
-    //Constructor
-    public Coche(){
-
-    }
-
-    //METODOS
-    // acceso retorno nombre (param)
-    public void acelerar(int velocidad){
-
-    }
-    public int velocidad(){
-        return 0;
-    }
-    */
+    //CONSTRUCTORES
 
     private String marca, modelo, matricula;
     private int bastidor, cv;
     private int velocidad;
+    private boolean dentro;
 
     // "seat", "Ibiza", 123, 123
+
+    public Coche() {
+        this.marca = "generico";
+        this.modelo = "generico";
+        this.bastidor = 0;
+        this.cv = 0;
+    }
 
     public Coche(String marca, String modelo, int bastidor, int cv, String matricula) {
         this.marca = marca;
@@ -33,40 +28,35 @@ public class Coche {
         this.bastidor = bastidor;
         this.cv = cv;
         this.matricula = matricula;
+        this.velocidad = 0;
+        dentro = true;
     }
 
     public Coche(String seat, String ibiza, int i, int i1) {
     }
 
 
-    public void acelerar() {
-        velocidad = velocidad + 50;
-    }
+    //METODOS
 
     public void acelerar(int vel) {
-        velocidad = velocidad + vel;
-    }
+        if (!isDentro()) {
+            velocidad = velocidad + vel;
 
-    public void decelerar() {
-        /*if (velocidad -50 < 0){}
-        else
-        velocidad = velocidad - 50;
-         */
-        velocidadValida(50);
+        }
     }
 
     public void decelerar(int vel) {
-        /*if (vel>velocidad){}
-        else
-        velocidad = velocidad - vel;
-         */
-        velocidadValida(vel);
+        if (velocidadValida(vel) && !isDentro()) {
+            velocidad = velocidad - vel;
+        }
     }
 
-    public void velocidadValida(int velocidad) {
-        if (this.velocidad > velocidad) {
-            this.velocidad = this.velocidad - velocidad;
-        }
+
+    public boolean velocidadValida(int velocidad) {
+        if (this.velocidad >= velocidad) {
+            return true;
+        } else
+            return false;
     }
 
     public boolean estaParado() {
@@ -79,12 +69,6 @@ public class Coche {
         return parado;
     }
 
-    public Coche() {
-        this.marca = "generico";
-        this.modelo = "generico";
-        this.bastidor = 0;
-        this.cv = 0;
-    }
 
     public String getMarca() {
         return marca;
@@ -132,5 +116,21 @@ public class Coche {
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;
+    }
+
+    public boolean isDentro() {
+        return dentro;
+    }
+
+    public void setDentro(boolean dentro) {
+        this.dentro = dentro;
+    }
+
+    @Override
+    public String toString() {
+        return "Modelo: " + getModelo() +
+                "Marca: " + getMarca() +
+                "Nº caballos: " + getCv() +
+                "Bastidor" + getBastidor();
     }
 }

@@ -1,4 +1,4 @@
-package clases;
+import clases.Coche;
 
 public class Entrada {
     public static void main(String[] args) {
