@@ -2,7 +2,7 @@ import clases.Coche;
 
 public class Entrada {
     public static void main(String[] args) {
-
+/*
         Coche coche = new Coche();
         Coche coche1 = new Coche("seat", "ibiza", 123, 123);
         System.out.printf("Antes de modificar, los cv son: %d\n", coche1.getCv());
@@ -22,5 +22,7 @@ public class Entrada {
             System.out.println("El coche esta parado");
         } else
             System.out.println("El coche esta en movimiento");
+
+ */
     }
 }

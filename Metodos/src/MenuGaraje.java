@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class MenuGaraje {
     public static void main(String[] args) {
 
-        boolean continuar;
 
         int opcion;
         Garaje garaje = new Garaje();
