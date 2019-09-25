@@ -14,4 +14,7 @@ public class ClaseB extends ClaseA {
         super.mostrarDatos();
         System.out.printf("Es modificado %b \n", modificado);
     }
+    public void miMetodoParticular(){
+        System.out.printf("Este metodo es solo del objeto de clase B \n");
+    }
 }
