@@ -1,6 +1,8 @@
 package utiles;
 
-public class Alumno {
+import java.io.Serializable;
+
+public class Alumno implements Serializable {
     // Hacemos privadas las cualidades del objeto para que no pueda acceder otro
     private String nombre, apellido, dni;
     private int matricula;
